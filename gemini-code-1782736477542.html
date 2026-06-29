@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyên Đề Từ Loại Word Form Nâng Cao (Câu 51 - 100) - Ms Lê Hằng English</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #8854C0;
+            --accent-color: #FDCB6E;
+            --teal-color: #00C9A7;
+            --correct-color: #00D26A;
+            --wrong-color: #FF4757;
+            --text-color: #2D3436;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+            margin: 0; padding: 0;
+        }
+
+        body {
+            background: linear-gradient(-45deg, #8854C0, #FDCB6E, #00C9A7, #FF7675);
+            background-size: 400% 400%;
+            animation: gradientAnim 12s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; opacity: 0.12; pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23ffffff'%3E%3Cpath d='M20 20 L30 20 L30 30 L20 30 Z M70 20 A 8 8 0 1 1 70 36 A 8 8 0 1 1 70 20 M50 70 L55 80 L65 80 L57 86 L60 96 L50 90 L40 96 L43 86 L35 80 L45 80 Z' /%3E%3C/g%3E%3C/svg%3E");
+            animation: patternFloat 25s linear infinite;
+        }
+
+        @keyframes gradientAnim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes patternFloat {
+            0% { background-position: 0 0; }
+            100% { background-position: 500px 1000px; }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 780px;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        header h5 {
+            font-size: 1.05rem;
+            color: #FFFFFF;
+            background: rgba(0, 0, 0, 0.15);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            font-weight: 700;
+        }
+
+        .warning-box {
+            background: #FFEAA7;
+            border: 4px solid #FDCB6E;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 0 #E17055;
+            color: #2D3436;
+            text-align: center;
+        }
+
+        .warning-box h4 {
+            font-size: 1.25rem;
+            color: #D63031;
+            margin-bottom: 8px;
+            font-weight: 900;
+        }
+
+        .warning-box p {
+            font-size: 0.98rem;
+            line-height: 1.5;
+            font-weight: 700;
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            border-radius: 22px;
+            padding: 24px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 0 rgba(0,0,0,0.1);
+            border: 3px solid #E0E0E0;
+        }
+
+        .card-meta-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #A0A0A0;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .question-text {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 18px;
+            background: #F8F9FA;
+            padding: 14px;
+            border-radius: 12px;
+            border-left: 5px solid #6C5CE7;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background: #FFFFFF;
+            border: 3px solid #E0E0E0;
+            border-radius: 18px;
+            padding: 14px 20px;
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-align: left;
+            cursor: pointer;
+            box-shadow: 0 6px 0 #E0E0E0;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            width: 100%;
+        }
+
+        .option-btn:hover:not(.disabled) {
+            transform: scale(1.01) translateY(-2px);
+            box-shadow: 0 8px 0 #D0D0D0;
+            background: #FAEDFF;
+        }
+
+        .option-btn.correct {
+            background: var(--correct-color) !important;
+            border-color: #00B359 !important;
+            color: white !important;
+            box-shadow: 0 6px 0 #008040 !important;
+        }
+
+        .option-btn.wrong {
+            background: var(--wrong-color) !important;
+            border-color: #E03847 !important;
+            color: white !important;
+            box-shadow: 0 6px 0 #B32431 !important;
+        }
+
+        .option-btn.disabled {
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        @keyframes shakeAction {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        .shake-animation { animation: shakeAction 0.4s ease-in-out; }
+
+        .explanation-box {
+            margin-top: 20px;
+            background: #F3EAFE;
+            border-left: 6px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 15px 18px;
+            display: none;
+            animation: slideDown 0.4s ease forwards;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .explanation-title {
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .explanation-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        .submit-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .submit-all-btn {
+            background: #6C5CE7; color: white; border: none;
+            padding: 16px 45px; font-size: 1.3rem; font-weight: 900;
+            border-radius: 22px; cursor: pointer; box-shadow: 0 6px 0 #4834D4;
+        }
+
+        #confetti-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 999;
+        }
+
+        .modal-mask {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); display: flex;
+            justify-content: center; align-items: center; z-index: 1000;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .modal-mask.active { opacity: 1; pointer-events: auto; }
+        .modal-container {
+            background: white; border-radius: 25px; padding: 35px;
+            max-width: 520px; width: 90%; text-align: center;
+            border: 4px solid var(--accent-color);
+        }
+        .modal-score { font-size: 3rem; font-weight: 900; color: var(--primary-color); margin: 15px 0; }
+        .modal-feedback { font-size: 1.05rem; color: var(--text-color); font-weight: 700; line-height: 1.6; margin-bottom: 25px; }
+        .modal-btn {
+            background: var(--teal-color); color: white; border: none; padding: 12px 30px;
+            font-size: 1.05rem; font-weight: 700; border-radius: 14px; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="container">
+        <header>
+            <h5>Giáo viên tạo: Ms Lê Hằng English</h5>
+        </header>
+
+        <div class="warning-box">
+            <h4>⚠️ CHẶNG 6: THỬ THÁCH WORD FORM CÂU 51 ĐẾN 100 (BỘ ĐỀ CHUYÊN) ⚠️</h4>
+            <p>Hệ thống hiển thị mượt mà biểu tượng Unicode, không lo lỗi font. Hãy cùng cô nghiên cứu từng vị trí cấu trúc câu để bứt phá điểm số nhé con!</p>
+        </div>
+
+        <div id="quiz-injector-node"></div>
+
+        <div class="submit-section">
+            <button class="submit-all-btn" onclick="processQuizEvaluation()">NỘP BÀI CHẤM ĐIỂM 🎉</button>
+        </div>
+    </div>
+
+    <div class="modal-mask" id="score-modal">
+        <div class="modal-container">
+            <h2>🏆 KẾT QUẢ BÀI THI CỦA CON 🏆</h2>
+            <div class="modal-score" id="score-text">0 / 50</div>
+            <div class="modal-feedback" id="feedback-text">Lời khuyên tuyển sinh từ cô giáo...</div>
+            <button class="modal-btn" onclick="reloadQuizLayout()">Làm Lại Từ Đầu 🔄</button>
+        </div>
+    </div>
+
+    <script>
+        const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
+        let audioContextInstance = null;
+
+        function triggerSoundFeedback(status) {
+            try {
+                if (!audioContextInstance) audioContextInstance = new AudioCtxClass();
+                const osc = audioContextInstance.createOscillator();
+                const gain = audioContextInstance.createGain();
+                osc.connect(gain); gain.connect(audioContextInstance.destination);
+
+                if (status === 'correct') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(523.25, audioContextInstance.currentTime);
+                    osc.frequency.setValueAtTime(783.99, audioContextInstance.currentTime + 0.1);
+                    gain.gain.setValueAtTime(0.15, audioContextInstance.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, audioContextInstance.currentTime + 0.3);
+                    osc.start(); osc.stop(audioContextInstance.currentTime + 0.3);
+                } else {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(196, audioContextInstance.currentTime);
+                    osc.frequency.setValueAtTime(130, audioContextInstance.currentTime + 0.15);
+                    gain.gain.setValueAtTime(0.2, audioContextInstance.currentTime);
+                    osc.start(); osc.stop(audioContextInstance.currentTime + 0.35);
+                }
+            } catch (e) {}
+        }
+
+        // KHO DỮ LIỆU ĐÃ FIX LỖI PHÔNG CHỮ VÀ NÂNG CẤP GIẢI THÍCH CHI TIẾT CÂU 51-100
+        const dataset = [
+            { id: 51, text: "51. I have no (INTEND) of changing jobs.", options: ["intention", "intend", "intentional", "intentionally"], correct: "intention", exp: "<strong>Vị trí từ loại:</strong> Ô trống đứng sau từ hạn định phủ định <em>no</em> và đứng trước giới từ <em>of</em> → Cần điền một <strong>Danh từ</strong>.<br><strong>Cấu trúc cố định:</strong> Ta có cụm từ <em>have no intention of V-ing</em> nghĩa là 'không có ý định làm gì'. Câu dịch: 'Tôi không có ý định chuyển việc.'<br><br>• Word Family: intend (v), intention (n), intentional (adj)." },
+            { id: 52, text: "52. The food was good but the (SERVE) was very slow.", options: ["service", "serve", "servant", "server"], correct: "service", exp: "<strong>Vị trí từ loại:</strong> Đứng sau mạo từ <em>the</em> và làm chủ ngữ chính đứng trước động từ <em>was very slow</em> → Cần một <strong>Danh từ chỉ sự vật/dịch vụ</strong>.<br><strong>Ngữ cảnh:</strong> Đồ ăn rất ngon nhưng 'dịch vụ/sự phục vụ' lại rất chậm → Chọn danh từ <em>service</em>.<br><br>• Word Family: serve (v), service (n), servant (n - người hầu)." },
+            { id: 53, text: "53. Nobody in the office had received an (INVITE) to the party.", options: ["invitation", "invite", "inviting", "invitationally"], correct: "invitation", exp: "<strong>Vị trí từ loại:</strong> Đứng sau mạo từ <em>an</em> đóng vai trò làm tân ngữ cho động từ <em>received</em> → Cần điền một <strong>Danh từ</strong>.<br><strong>Ngữ cảnh:</strong> Không ai trong văn phòng nhận được 'lời mời' tới bữa tiệc → Danh từ tương ứng là <em>invitation</em>.<br><br>• Word Family: invite (v), invitation (n), inviting (adj)." },
+            { id: 54, text: "54. It was a (GOLD) opportunity to study abroad when he won that scholarship.", options: ["golden", "gold", "golds", "goldenly"], correct: "golden", exp: "<strong>Vị trí từ loại:</strong> Đứng trước danh từ cơ hội <em>opportunity</em> để bổ nghĩa đặc điểm tính chất → Cần điền một <strong>Tính từ</strong> (Adj + N).<br><strong>Ngữ cảnh:</strong> Ta có cụm thành ngữ quen thuộc <em>golden opportunity</em> nghĩa là 'cơ hội vàng / cơ hội tuyệt vời tuyệt vời'.<br><br>• Word Family: gold (n/adj - vàng chất liệu), golden (adj - bằng vàng / tuyệt vời)." },
+            { id: 55, text: "55. Being a(n) (MARRY) mother is no longer a social stigma in Western societies.", options: ["unmarried", "married", "marriage", "marry"], correct: "unmarried", exp: "<strong>Vị trí từ loại:</strong> Đứng trước danh từ người mẹ <em>mother</em> → Cần một <strong>Tính từ</strong>.<br><strong>Ngữ cảnh trái nghĩa:</strong> Cụm từ 'no longer a social stigma' (không còn là vết nhơ xã hội) ám chỉ các bà mẹ đơn thân/chưa kết hôn → Chọn tính từ mang tiền tố phủ định là <em>unmarried</em>.<br><br>• Word Family: marry (v), marriage (n), married (adj) ↔ unmarried (adj)." },
+            { id: 56, text: "56. The rice wine is a (SPECIAL) of this region.", options: ["specialty", "special", "specialize", "specialization"], correct: "specialty", exp: "<strong>Vị trí từ loại:</strong> Đứng sau mạo từ <em>a</em> và đứng trước giới từ <em>of</em> → Cần điền một <strong>Danh từ</strong>.<br><strong>Ngữ cảnh:</strong> Rượu gạo là một 'đặc sản' của vùng này → Danh từ chỉ đặc sản là <em>specialty</em> hoặc <em>speciality</em>.<br><br>• Word Family: special (adj), specialize (v), specialty (n)." },
+            { id: 57, text: "57. The interior (DECORATE) of the house was designed by the owner himself.", options: ["decoration", "decorate", "decorator", "decorative"], correct: "decoration", exp: "<strong>Vị trí từ loại:</strong> Đứng sau tính từ phân loại <em>interior</em> (nội thất) làm chủ ngữ chính gánh vác câu → Cần điền một <strong>Danh từ chỉ sự việc</strong>.<br><strong>Ngữ cảnh:</strong> Cụm từ <em>interior decoration</em> nghĩa là 'việc trang trí nội thất'. Câu dịch: 'Việc trang trí nội thất của ngôi nhà do chính chủ nhà thiết kế.'<br><br>• Word Family: decorate (v), decoration (n), decorator (n - thợ trang trí)." },
+            { id: 58, text: "58. The school held a (CELEBRATE) to mark twenty years of its foundation.", options: ["celebration", "celebrate", "celebrated", "celebrity"], correct: "celebration", exp: "<strong>Vị trí từ loại:</strong> Đứng sau mạo từ số ít <em>a</em> làm tân ngữ tiếp nhận cho hành động tổ chức <em>held</em> → Cần điền một <strong>Danh từ</strong>.<br><strong>Ngữ cảnh:</strong> Trường học đã tổ chức một 'lễ kỷ niệm' để đánh dấu 20 năm thành lập → Điền danh từ <em>celebration</em>.<br><br>• Word Family: celebrate (v), celebration (n), celebrated (adj)." },
+            { id: 59, text: "59. I enjoy swimming in the sea, (SPECIAL) in the early morning.", options: ["especially", "special", "specialize", "specialty"], correct: "especially", exp: "<strong>Vị trí từ loại:</strong> Ô trống đứng trước một cụm giới từ chỉ thời gian nhằm mục đích nhấn mạnh sắc thái cụ thể hơn cho toàn vế → Cần điền một <strong>Trạng từ</strong>.<br><strong>Ngữ cảnh:</strong> Tôi thích bơi ở biển, 'đặc biệt là' vào sáng sớm → Điền trạng từ nhấn mạnh chuyên biệt là <em>especially</em>." },
+            { id: 60, text: "60. These cars are remarkable for the (QUIET) of their engines.", options: ["quietness", "quiet", "quietly", "quiets"], correct: "quietness", exp: "<strong>Vị trí từ loại:</strong> Kẹp giữa mạo từ xác định <em>the</em> và giới từ <em>of</em> → Chắc chắn phải điền một <strong>Danh từ trừu tượng</strong>.<br><strong>Ngữ cảnh:</strong> Những chiếc xe này đáng chú ý vì 'sự êm ái/sự yên lặng' của động cơ → Chọn danh từ <em>quietness</em>.<br><br>• Word Family: quiet (adj/v/n), quietness (n), quietly (adv)." },
+            { id: 61, text: "61. Her (MARRY) did not last long and she had to live on her own again.", options: ["marriage", "marry", "married", "marriages"], correct: "marriage", exp: "<strong>Vị trí từ loại:</strong> Đứng sau tính từ sở hữu <em>Her</em> đóng vai trò làm chủ ngữ chính đứng trước động từ 'did not last' → Cần điền một <strong>Danh từ số ít</strong>.<br><strong>Ngữ cảnh:</strong> 'Cuộc hôn nhân' của cô ấy không kéo dài lâu → Danh từ cuộc hôn nhân là <em>marriage</em>.<br><br>• Word Family: marry (v), marriage (n), married (adj)." },
+            { id: 62, text: "62. Honesty is the base of any healthy (RELATE) .", options: ["relationship", "relation", "relate", "relative"], correct: "relationship", exp: "<strong>Vị trí từ loại:</strong> Đứng sau tính từ <em>healthy</em> nằm sau từ hạn định <em>any</em> ở cuối câu → Vị trí này cần một <strong>Danh từ trừu tượng</strong> (Adj + N).<br><strong>Ngữ cảnh:</strong> Sự trung thực là nền tảng của bất kỳ 'mối quan hệ' lành mạnh nào → Chọn danh từ mối quan hệ giữa con người là <em>relationship</em>.<br><br>• Word Family: relate (v), relation (n), relationship (n)." },
+            { id: 63, text: "63. It is difficult to give a definition of (HAPPY) ; it all depends on each person.", options: ["happiness", "happy", "happily", "unhappiness"], correct: "happiness", exp: "<strong>Vị trí từ loại:</strong> Đứng sau giới từ chỉ nội dung <em>of</em> ở giữa câu → Vị trí này cần điền một <strong>Danh từ trừu tượng</strong>.<br><strong>Ngữ cảnh:</strong> Thật khó để đưa ra định nghĩa về 'niềm hạnh phúc' → Danh từ tương ứng là <em>happiness</em>.<br><br>• Word Family: happy (adj), happiness (n), happily (adv)." },
+            { id: 64, text: "64. Scientists have proven that lung cancer is directly (RELATIONSHIP) to smoking.", options: ["related", "relate", "relation", "relationship"], correct: "related", exp: "<strong>Vị trí từ loại:</strong> Đứng sau hệ từ <em>is</em> kết hợp trạng từ <em>directly</em> và đứng trước giới từ <em>to</em> → Cần điền một tính từ/phân từ.<br><strong>Cấu trúc cố định:</strong> Ta có cấu trúc kinh điển: <strong>be related to something</strong> nghĩa là 'có liên quan trực tiếp đến cái gì'. Câu dịch: 'Các nhà khoa học đã chứng minh ung thư phổi có liên quan trực tiếp đến việc hút thuốc.'" },
+            { id: 65, text: "65. They talked (QUIET) so as not to wake the baby.", options: ["quietly", "quiet", "quietness", "quieter"], correct: "quietly", exp: "<strong>Vị trí từ loại:</strong> Đứng sau và bổ nghĩa phương thức cho động từ hành động thường ở quá khứ <em>talked</em> → Cần một <strong>Trạng từ cách thức</strong> (V + Adv).<br><strong>Ngữ cảnh:</strong> Họ nói chuyện 'một cách khẽ khàng/nhỏ nhẹ' để không làm thức giấc em bé → Điền trạng từ <em>quietly</em>." },
+            { id: 66, text: "66. Final-year students are (NATURE) anxious about getting work after graduation.", options: ["naturally", "nature", "natural", "naturalize"], correct: "naturally", exp: "<strong>Vị trí từ loại:</strong> Nằm kẹp giữa hệ từ tobe <em>are</em> và tính từ miêu tả cảm xúc <em>anxious</em> → Quy tắc từ loại yêu cầu điền một <strong>Trạng từ</strong> bổ nghĩa mức độ trạng thái (tobe + Adv + Adj).<br><strong>Ngữ cảnh:</strong> Sinh viên năm cuối 'lẽ tự nhiên / hiển nhiên là' sẽ lo lắng về việc tìm việc làm → Chọn trạng từ <em>naturally</em>." },
+            { id: 67, text: "67. Some regions in the North of our country are very (MOUNTAIN) .", options: ["mountainous", "mountain", "mountains", "mountaineer"], correct: "mountainous", exp: "<strong>Vị trí từ loại:</strong> Đứng sau trạng từ mức độ <em>very</em> đứng cuối câu bổ nghĩa cho chủ ngữ các vùng miền <em>regions</em> → Cần điền một <strong>Tính từ</strong>.<br><strong>Ngữ cảnh:</strong> Một số vùng ở phía Bắc nước ta 'có rất nhiều núi / thuộc vùng núi' → Chọn tính từ <em>mountainous</em>.<br><br>• Word Family: mountain (n), mountainous (adj)." },
+            { id: 68, text: "68. These students (VOLUNTEER) spend their spare time at weekends taking care of the orphans.", options: ["voluntarily", "volunteer", "voluntary", "volunteers"], correct: "voluntarily", exp: "<strong>Vị trí từ loại:</strong> Nằm giữa danh từ chủ ngữ <em>These students</em> và động từ hành động chính <em>spend</em> → Vị trí này cần một <strong>Trạng từ</strong> để bổ nghĩa cho phương thức thực hiện hành động.<br><strong>Ngữ cảnh:</strong> Những học sinh này 'một cách tự nguyện' dành thời gian cuối tuần để chăm sóc trẻ mồ côi → Chọn trạng từ <em>voluntarily</em>.<br><br>• Word Family: volunteer (n/v), voluntary (adj), voluntarily (adv)." },
+            { id: 69, text: "69. High school students are among the many (PARTICIPATE) in the Green Summer program, whose purpose is to protect the environment.", options: ["participants", "participant", "participation", "participate"], correct: "participants", exp: "<strong>Vị trí từ loại:</strong> Đứng sau cụm từ hạn định số nhiều <em>the many</em> → Vị trí này bắt buộc phải điền một <strong>Danh từ đếm được số nhiều</strong>.<br><strong>Ngữ cảnh:</strong> Học sinh cấp ba nằm trong số nhiều 'người tham gia' vào chiến dịch Mùa hè xanh → Danh từ chỉ người tham gia ở dạng số nhiều là <em>participants</em>.<br><br>• Word Family: participate (v), participant (n) → số nhiều: participants, participation (n)." },
+            { id: 70, text: "70. Please make yourselves (COMFORT) while I get dinner ready.", options: ["comfortable", "comfort", "comfortably", "uncomfortable"], correct: "comfortable", exp: "<strong>Vị trí từ loại & Cấu trúc:</strong> Áp dụng cấu trúc tiếp đãi khách lịch sự: <strong>make yourself / yourselves + Adjective</strong> có nghĩa là 'hãy cứ tự nhiên thoải mái như ở nhà'. Do đó từ cần điền là tính từ <em>comfortable</em>.<br><br>• Word Family: comfort (n/v), comfortable (adj), comfortably (adv)." },
+            { id: 71, text: "71. The young girl, who died of cancer, had received many letters of support from her fellow (SUFFER) .", options: ["sufferers", "sufferer", "suffering", "sufferings"], correct: "sufferers", exp: "<strong>Vị trí từ loại:</strong> Đứng sau cụm danh xưng đồng cảnh ngộ <em>her fellow</em> → Cần một danh từ. Vì cô gái nhận được 'nhiều bức thư' (many letters) từ tập hợp người → Cần dùng <strong>Danh từ số nhiều chỉ người</strong>.<br><strong>Ngữ cảnh:</strong> Từ những 'người cùng chịu cảnh ngộ mắc bệnh đau đớn giống mình' → Chọn danh từ số nhiều <em>sufferers</em>.<br><br>• Word Family: suffer (v), suffering (n), sufferer (n) → số nhiều: sufferers." },
+            { id: 72, text: "72. I couldn't sleep because the bed was so (COMFORT) .", options: ["uncomfortable", "comfortable", "comfort", "comfortably"], correct: "uncomfortable", exp: "<strong>Vị trí từ loại:</strong> Đứng sau cấu trúc <em>was so...</em> ở cuối câu → Cần điền một <strong>Tính từ</strong>.<br><strong>Ngữ cảnh trái nghĩa:</strong> Lý do đưa ra ở vế trước là 'I couldn't sleep' (Tôi không thể ngủ được) → Chiếc giường đem lại cảm giác tồi tệ, không thoải mái. Ta phải thêm tiền tố phủ định 'un-' thành tính từ trái nghĩa <em>uncomfortable</em>." },
+            { id: 73, text: "73. The purpose of this program is to provide education for homeless and (ADVANTAGE) children.", options: ["disadvantaged", "advantage", "disadvantage", "advantageous"], correct: "disadvantaged", exp: "<strong>Vị trí từ loại:</strong> Đứng trước và bổ nghĩa cho danh từ đứa trẻ <em>children</em>, đồng thời nối bằng từ 'and' song hành tính chất với tính từ <em>homeless</em> (vô gia cư) → Cần điền một <strong>Tính từ</strong>.<br><strong>Ngữ cảnh:</strong> Chương trình cung cấp giáo dục cho trẻ em vô gia cư và 'trẻ em có hoàn cảnh khó khăn, thiệt thòi' → Chọn tính từ <em>disadvantaged</em>.<br><br>• Word Family: advantage (n), disadvantage (n), disadvantaged (adj)." },
+            { id: 74, text: "74. Children who are born into poor, large families may be (EDUCATION) disadvantaged.", options: ["educationally", "educational", "education", "educate"], correct: "educationally", exp: "<strong>Vị trí từ loại:</strong> Ô trống đứng trước và bổ nghĩa mức độ phạm vi cho tính từ <em>disadvantaged</em> (thiệt thòi) → Theo quy tắc vị trí từ loại, từ bổ nghĩa cho tính từ phải là một <strong>Trạng từ</strong> (Adv + Adj).<br><strong>Ngữ cảnh:</strong> Những đứa trẻ sinh ra trong gia đình nghèo đông con có thể bị thiệt thòi 'về mặt giáo dục' → Điền trạng từ <em>educationally</em>." },
+            { id: 75, text: "75. This charitable organization relies almost on (VOLUNTEER) contributions.", options: ["voluntary", "volunteer", "voluntarily", "volunteers"], correct: "voluntary", exp: "<strong>Vị trí từ loại:</strong> Đứng trước danh từ những sự đóng góp <em>contributions</em> để tạo cụm bổ nghĩa đặc tính → Cần một <strong>Tính từ</strong> (Adj + N).<br><strong>Ngữ cảnh:</strong> Tổ chức từ thiện này sống dựa chủ yếu vào 'sự đóng góp tự nguyện' → Chọn tính từ mang tính tự nguyện là <em>voluntary</em>." },
+            { id: 76, text: "76. If you're too trusting, other people will take (DISADVANTAGED) of you.", options: ["advantage", "disadvantage", "advantageous", "disadvantaged"], correct: "advantage", exp: "<strong>Cấu trúc hành ngữ cố định:</strong> Ta có cụm từ vô cùng phổ biến: <strong>take advantage of someone / something</strong> có nghĩa là 'lợi dụng ai đó / tận dụng cái gì'. Do đó, vị trí này bắt buộc phải điền danh từ gốc là <em>advantage</em>. Câu dịch: 'Nếu con quá tin người, kẻ khác sẽ lợi dụng con.'" },
+            { id: 77, text: "77. Birds are (NATURE) enemies of many harmful insects.", options: ["natural", "nature", "naturally", "naturals"], correct: "natural", exp: "<strong>Vị trí từ loại:</strong> Đứng trước danh từ những kẻ thù <em>enemies</em> nhằm bổ nghĩa tính chất gốc gác sinh học → Cần điền một <strong>Tính từ</strong> (Adj + N).<br><strong>Ngữ cảnh:</strong> Chim chóc là 'kẻ thù tự nhiên / thiên địch' của nhiều loài côn trùng có hại → Chọn tính từ thuộc về tự nhiên là <em>natural</em>." },
+            { id: 78, text: "78. Tom, whose parents are (EDUCATE) and barely literate, has a master's degree from London University.", options: ["uneducated", "educated", "education", "educational"], correct: "uneducated", exp: "<strong>Vị trí từ loại:</strong> Đứng sau hệ từ <em>are</em> bổ nghĩa đặc điểm con người và kết nối từ song hành với cụm tính từ tiêu cực 'barely literate' (hầu như không biết chữ) → Cần một <strong>Tính từ mang sắc thái tiêu cực</strong>.<br><strong>Ngữ cảnh:</strong> Bố mẹ Tom 'không được học hành đến nơi đến chốn / học vấn thấp' → Thêm tiền tố phủ định tạo tính từ <em>uneducated</em>." },
+            { id: 79, text: "79. (MOUNTAIN) is an adventure sport, which may be involved in dangers.", options: ["Mountaineering", "Mountain", "Mountaineer", "Mountainous"], correct: "Mountaineering", exp: "<strong>Vị trí từ loại:</strong> Đứng ở đầu câu làm nhiệm vụ gánh vác vị trí **Chủ ngữ chính** đứng trước động từ số ít 'is' → Bắt buộc phải điền một **Danh từ chỉ tên môn thể thao**.<br><strong>Ngữ cảnh:</strong> 'Môn leo núi thể thao mạo hiểm' là một môn thể thao có thể gặp nguy hiểm → Danh từ môn leo núi là <em>Mountaineering</em>.<br><br>• Word Family: mountain (n), mountaineer (n - người leo núi), mountaineering (n - môn leo núi)." },
+            { id: 80, text: "80. The minister is said to have been brought up in an (ORPHAN) before being adopted by a rich married couple.", options: ["orphanage", "orphan", "orphans", "orphaned"], correct: "orphanage", exp: "<strong>Vị trí từ loại:</strong> Đứng sau mạo từ <em>an</em> kết hợp giới từ chỉ nơi chốn <em>in an...</em> → Vị trí này cần điền một <strong>Danh từ chỉ địa điểm/nơi chốn</strong>.<br><strong>Ngữ cảnh:</strong> Vị bộ trưởng được nuôi lớn trong một 'trại trẻ mồ côi' trước khi được nhận nuôi → Danh từ trại mồ côi là <em>orphanage</em>.<br><br>• Word Family: orphan (n - trẻ mồ côi), orphanage (n - trại trẻ mồ côi)." },
+            { id: 81, text: "81. Pollution can have (DISASTER) effects on the balanced ecosystem.", options: ["disastrous", "disaster", "disastrously", "disasters"], correct: "disastrous", exp: "<strong>Vị trí từ loại:</strong> Đứng trước danh từ những tác động ảnh hưởng <em>effects</em> nằm trong cụm 'have... effects on' → Cần điền một <strong>Tính từ</strong> để bổ nghĩa tính chất (Adj + N).<br><strong>Ngữ cảnh:</strong> Ô nhiễm có thể gây ra những hậu quả 'thảm khốc / tai hại nghiêm trọng' → Chọn tính từ <em>disastrous</em>.<br><br>• Word Family: disaster (n), disastrous (adj), disastrously (adv)." },
+            { id: 82, text: "82. His sudden sickness prevented him from active (PARTICIPATE) in the competition.", options: ["participation", "participate", "participant", "participants"], correct: "participation", exp: "<strong>Vị trí từ loại:</strong> Đứng sau tính từ miêu tả <em>active</em> (năng nổ) làm tân ngữ đứng sau giới từ *from* → Vị trí này cần điền một <strong>Danh từ trừu tượng chỉ hành động</strong>.<br><strong>Ngữ cảnh:</strong> Căn bệnh đột ngột ngăn anh ấy 'sự tham gia' năng nổ vào cuộc thi → Danh từ sự tham gia là <em>participation</em>." },
+            { id: 83, text: "83. In their (EAGER) to find a solution, they may have overlooked certain financial difficulties.", options: ["eagerness", "eager", "eagerly", "eagernesses"], correct: "eagerness", exp: "<strong>Vị trí từ loại:</strong> Đứng sau tính từ sở hữu số nhiều <strong>their</strong> nằm trong cụm trạng ngữ đầu câu → Vị trí này bắt buộc phải điền một <strong>Danh từ trừu tượng</strong>.<br><strong>Ngữ cảnh:</strong> Trong 'sự hăm hở / sự háo hức' tìm ra giải pháp, họ có thể đã bỏ qua khó khăn tài chính → Danh từ tương ứng là <em>eagerness</em>.<br><br>• Word Family: eager (adj), eagerness (n), eagerly (adv)." },
+            { id: 84, text: "84. She felt (EMBARRASS) about undressing in front of the doctor.", options: ["embarrassed", "embarrassing", "embarrassment", "embarrasses"], correct: "embarrassed", exp: "<strong>Vị trí từ loại:</strong> Đứng sau hệ động từ chỉ cảm giác xúc cảm <strong>felt</strong> → Vị trí này cần điền một <strong>Tính từ</strong> chỉ trạng thái cảm xúc tâm lý con người.<br><strong>Mẹo chọn đuôi -ed/-ing:</strong> Chủ ngữ là người ('She') đang trải qua cảm giác ngại ngùng xấu hổ tự thân → Chọn tính từ hình thái đuôi <strong>'-ed'</strong> là <em>embarrassed</em>.<br><br>• Word Family: embarrass (v), embarrassment (n), embarrassed (adj - người), embarrassing (adj - tính chất vật)." },
+            { id: 85, text: "85. This war has caused widespread human (SUFFER) .", options: ["suffering", "suffer", "sufferer", "sufferings"], correct: "suffering", exp: "<strong>Vị trí từ loại:</strong> Đứng sau tính từ thuộc về con người <em>human</em> để làm tân ngữ kết thúc câu cho hành động gây ra <em>caused</em> → Cần một <strong>Danh từ trừu tượng</strong>.<br><strong>Ngữ cảnh:</strong> Cuộc chiến này đã gây ra 'sự đau khổ / nỗi đau đớn' trên diện rộng cho loài người → Danh từ sự đau khổ là <em>suffering</em>." },
+            { id: 86, text: "86. If something comes (NATURE) to you, you are able to do it very easily and very well.", options: ["naturally", "nature", "natural", "naturalist"], correct: "naturally", exp: "<strong>Cấu trúc thành ngữ cố định:</strong> Ta có cụm cấu trúc diễn đạt rất phổ biến: <strong>something comes naturally to someone</strong> có nghĩa là 'cái gì đó đến một cách tự nhiên / là bản năng bẩm sinh của ai nên làm rất dễ'. Do đó, từ loại cần điền ở đây là trạng từ <em>naturally</em>." },
+            { id: 87, text: "87. The company is making plans for (EXPAND) into European markets.", options: ["expansion", "expand", "expansive", "expandable"], correct: "expansion", exp: "<strong>Vị trí từ loại:</strong> Đứng sau giới từ mục đích <em>for</em> nằm trong kết cấu 'making plans for...' → Vị trí này cần điền một <strong>Danh từ</strong>.<br><strong>Ngữ cảnh:</strong> Công ty đang lập kế hoạch cho 'sự mở rộng' sang thị trường Châu Âu → Danh từ của động từ expand là <em>expansion</em>.<br><br>• Word Family: expand (v), expansion (n), expansive (adj)." },
+            { id: 88, text: "88. After three years of the campaign, it is reported that only 10% of the population are still (LITERATE) .", options: ["illiterate", "literate", "literacy", "illiteracy"], correct: "illiterate", exp: "<strong>Vị trí từ loại:</strong> Đứng sau cụm trạng thái hệ từ <em>are still...</em> ở cuối câu → Vị trí này cần điền một <strong>Tính từ</strong>.<br><strong>Phân tích ngữ cảnh trái nghĩa:</strong> Vì đây là cuộc chiến xóa mù chữ kéo dài 3 năm, báo cáo chỉ ra điều đáng buồn là 'vẫn còn 10% dân số mù chữ' → Thêm tiền tố phủ định chuyên biệt của chữ 'l' là 'i-' tạo thành tính từ <em>illiterate</em> (mù chữ)." },
+            { id: 89, text: "89. It's hard to understand this article thoroughly because it is full of (TECHNIQUE) terms.", options: ["technical", "technique", "technician", "technically"], correct: "technical", exp: "<strong>Vị trí từ loại:</strong> Đứng trước danh từ các thuật ngữ <em>terms</em> để bổ nghĩa phân loại thuộc tính → Cần điền một <strong>Tính từ</strong> (Adj + N).<br><strong>Ngữ cảnh:</strong> Bài viết khó hiểu vì chứa đầy các 'thuật ngữ chuyên môn / thuật ngữ kỹ thuật' → Chọn tính từ <em>technical</em>.<br><br>• Word Family: technique (n - phương pháp kỹ thuật), technical (adj), technician (n - kỹ thuật viên)." },
+            { id: 90, text: "90. Despite his poverty, the man acted (HONOR) and returned the wallet to its owner.", options: ["honorably", "honorable", "honor", "honour"], correct: "honorably", exp: "<strong>Vị trí từ loại:</strong> Đứng sau bổ nghĩa cách thức cho động từ hành động thường ở quá khứ đơn <em>acted</em> (hành xử) → Cần điền một <strong>Trạng từ cách thức</strong> (V + Adv).<br><strong>Ngữ cảnh:</strong> Bất chấp sự nghèo khổ, người đàn ông đã hành xử 'một cách chính trực / đáng kính' và trả lại ví → Điền trạng từ <em>honorably</em> (hoặc honourably)." },
+            { id: 91, text: "91. The office needs four more computers in order to work more (EFFECT) .", options: ["effectively", "effective", "effectiveness", "effect"], correct: "effectively", exp: "<strong>Vị trí từ loại:</strong> Đứng sau và bổ nghĩa phương thức năng suất cho động từ hành động thường <em>work</em> kết hợp trạng từ so sánh 'more' → Cần điền một <strong>Trạng từ</strong>.<br><strong>Ngữ cảnh:</strong> Văn phòng cần thêm máy tính để làm việc 'một cách hiệu quả hơn' → Chọn trạng từ <em>effectively</em>.<br><br>• Word Family: effect (n), effective (adj), effectively (adv), effectiveness (n)." },
+            { id: 92, text: "92. The fight against (LITERATE) in the rural areas was not as easy as expected.", options: ["illiteracy", "literacy", "literate", "illiterate"], correct: "illiteracy", exp: "<strong>Vị trí từ loại:</strong> Đứng sau giới từ mang tính chống lại tiêu diệt <strong>against</strong> → Vị trí này bắt buộc phải điền một <strong>Danh từ chỉ tệ nạn/vấn đề xã hội</strong>.<br><strong>Ngữ cảnh:</strong> Cuộc chiến chống lại 'nạn mù chữ' ở các vùng nông thôn không dễ dàng → Danh từ nạn mù chữ mang tiền tố phủ định là <em>illiteracy</em>.<br><br>• Word Family: tương tự câu 88: literacy (n) ↔ illiteracy (n)." },
+            { id: 93, text: "93. Some people think that aspirin is a(n) (EFFECT) cure for headache. ", options: ["effective", "effectively", "effectiveness", "ineffective"], correct: "effective", exp: "<strong>Vị trí từ loại:</strong> Đứng trước bổ nghĩa tính chất công dụng cho danh từ phương thuốc chữa bệnh <em>cure</em> nằm trong cụm 'a(n)... cure' → Cần một <strong>Tính từ</strong> (Adj + N).<br><strong>Ngữ cảnh:</strong> Thuốc aspirin là một phương pháp chữa đau đầu 'rất hiệu quả' → Chọn tính từ khẳng định <em>effective</em>." },
+            { id: 94, text: "94. The Red Cross is in charge of (PROVIDE) of emergency relief.", options: ["provision", "provide", "providing", "provider"], correct: "provision", exp: "<strong>Vị trí từ loại & Cấu trúc nâng cao:</strong> Ô trống nằm sau cụm động từ chịu trách nhiệm *in charge of* và đứng ngay trước giới từ *of*. Khi cấu trúc có dạng <em>... + of + danh từ</em>, ta ưu tiên chọn một danh từ gốc chỉ sự cung ứng là <strong>provision</strong> (sự cung cấp) thay vì dùng V-ing để câu trở nên trang trọng chuẩn ngữ pháp hơn." },
+            { id: 95, text: "95. Her ideas have lost all (RELEVANT) to the modern world. She seems to be living in the past.", options: ["relevance", "relevant", "irrelevant", "relevantly"], correct: "relevance", exp: "<strong>Vị trí từ loại:</strong> Đứng sau từ hạn định chỉ số lượng toàn bộ <strong>all</strong> làm tân ngữ trực tiếp cho hành động đánh mất <em>lost</em> → Bắt buộc phải điền một <strong>Danh từ</strong>.<br><strong>Ngữ cảnh:</strong> Các ý tưởng của bà ấy đã mất sạch 'sự liên quan / tính thực tế thích hợp' với thế giới hiện đại → Danh từ tương ứng là <em>relevance</em>." },
+            { id: 96, text: "96. Humor is often far more (EFFECT) than shouting.", options: ["effective", "effectively", "effectiveness", "ineffective"], correct: "effective", exp: "<strong>Vị trí từ loại:</strong> Nằm trong cấu trúc so sánh hơn của tính từ dài <em>far more... than</em> và đứng sau hệ từ liên kết *is* → Vị trí này cần điền một <strong>Tính từ</strong> gánh bổ ngữ.<br><strong>Ngữ cảnh:</strong> Sự hài hước thường 'hiệu quả hơn nhiều' so với việc la hét → Điền tính từ <em>effective</em>." },
+            { id: 97, text: "97. I can see an increasing (MATURE) in how she understands the world.", options: ["maturity", "mature", "immature", "immaturity"], correct: "maturity", exp: "<strong>Vị trí từ loại:</strong> Đứng sau tính từ chỉ sự tiến tiến dần <em>increasing</em> làm tân ngữ tiếp nhận cho hành động nhìn thấy <em>see</em> → Vị trí này bắt buộc điền một <strong>Danh từ trừu tượng</strong>.<br><strong>Ngữ cảnh:</strong> Tôi có thể thấy 'sự trưởng thành' ngày càng tăng trong cách cô ấy hiểu thế giới → Danh từ tương ứng là <em>maturity</em>.<br><br>• Word Family: mature (adj), maturity (n) ↔ immaturity (n - sự non nớt)." },
+            { id: 98, text: "98. They started a campaign for illiteracy (ERADICATE) in the summer of 2000.", options: ["eradication", "eradicate", "eradicating", "eradicated"], correct: "eradication", exp: "<strong>Vị trí từ loại:</strong> Đứng ở cuối vế sau danh từ nạn mù chữ tạo lập cụm thuật ngữ danh từ ghép đóng vai trò tân ngữ sau giới từ 'for' → Cần điền một <strong>Danh từ chỉ sự việc triệt tiêu</strong>.<br><strong>Ngữ cảnh:</strong> Chiến dịch cho 'sự xóa sổ / việc triệt tiêu tận gốc' nạn mù chữ → Danh từ tương ứng là <em>eradication</em>." },
+            { id: 99, text: "99. I am deeply (HONOR) to be invited to this momentous occasion.", options: ["honored", "honorable", "honor", "honourably"], correct: "honored", exp: "<strong>Vị trí từ loại & Cấu trúc:</strong> Đứng sau tobe <em>am</em> và trạng từ nhấn mạnh cảm xúc <em>deeply</em> → Cần một tính từ phân từ bị động đuôi '-ed'.<br><strong>Cấu trúc cố định:</strong> Ta có cụm <strong>be honored to do something</strong> nghĩa là 'vinh hạnh / vinh dự được làm gì'. Do đó chọn tính từ phân từ <em>honored</em> (hoặc honoured)." },
+            { id: 100, text: "100. We congratulate James on his well-deserved (PROMOTE) to Chief Executive", options: ["promotion", "promote", "promotional", "promoter"], correct: "promotion", exp: "<strong>Vị trí từ loại:</strong> Đứng sau tính từ sở hữu <em>his</em> và tính từ ghép miêu tả sự xứng đáng <em>well-deserved</em> → Vị trí này bắt buộc phải điền một <strong>Danh từ chỉ sự việc</strong>.<br><strong>Ngữ cảnh:</strong> Chúc mừng James vì 'sự thăng chức' hoàn toàn xứng đáng của anh ấy lên vị trí Giám đốc điều hành → Danh từ tương ứng là <em>promotion</em>.<br><br>• Word Family: promote (v), promotion (n), promotional (adj)." }
+        ];
+
+        let studentAnswersTrack = {};
+
+        function mixOptionsRandomly(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function buildQuizLayout() {
+            const rootNode = document.getElementById('quiz-injector-node');
+            rootNode.innerHTML = "";
+
+            dataset.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'question-card';
+                card.id = `q-card-block-${item.id}`;
+
+                let randomizedOptions = [...item.options];
+                mixOptionsRandomly(randomizedOptions);
+
+                let buttonsListMarkup = `<div class="options-list">`;
+                randomizedOptions.forEach((textOption, optIdx) => {
+                    const alphabetPrefix = ["A", "B", "C", "D"];
+                    const statusCheck = (textOption === item.correct);
+                    buttonsListMarkup += `
+                        <button class="option-btn" data-correct="${statusCheck}" onclick="validateUserClick(this, ${item.id})">
+                            <strong>${alphabetPrefix[optIdx]}.</strong> ${textOption}
+                        </button>
+                    `;
+                });
+                buttonsListMarkup += `</div>`;
+
+                card.innerHTML = `
+                    <div class="card-meta-title">Câu kiểm tra Word Form số ${item.id} / 100</div>
+                    <div class="question-text">${item.text}</div>
+                    ${buttonsListMarkup}
+                    <div class="explanation-box" id="explain-box-id-${item.id}">
+                        <div class="explanation-title">📌 BẢNG PHÂN TÍCH CHUYÊN SÂU KHÔNG LỖI FONT:</div>
+                        <div class="explanation-content">${item.exp}</div>
+                    </div>
+                `;
+                rootNode.appendChild(card);
+            });
+        }
+
+        function validateUserClick(buttonElement, questionId) {
+            if (studentAnswersTrack[questionId] !== undefined) return;
+
+            const isCorrect = buttonElement.getAttribute('data-correct') === 'true';
+            studentAnswersTrack[questionId] = isCorrect;
+
+            const currentCardNode = document.getElementById(`q-card-block-${questionId}`);
+            const siblingButtons = currentCardNode.querySelectorAll('.option-btn');
+
+            if (isCorrect) {
+                buttonElement.classList.add('correct');
+                triggerSoundFeedback('correct');
+                launchConfettiEffect();
+            } else {
+                buttonElement.classList.add('wrong');
+                currentCardNode.classList.add('shake-animation');
+                triggerSoundFeedback('wrong');
+
+                siblingButtons.forEach(btn => {
+                    if (btn.getAttribute('data-correct') === 'true') {
+                        btn.classList.add('correct');
+                    }
+                });
+
+                setTimeout(() => {
+                    currentCardNode.classList.remove('shake-animation');
+                }, 450);
+            }
+
+            siblingButtons.forEach(btn => btn.classList.add('disabled'));
+            document.getElementById(`explain-box-id-${questionId}`).style.display = "block";
+        }
+
+        const canvasElement = document.getElementById('confetti-canvas');
+        const ctxNode = canvasElement.getContext('2d');
+        let confettiCollection = [];
+
+        function dynamicCanvasResize() {
+            canvasElement.width = window.innerWidth;
+            canvasElement.height = window.innerHeight;
+        }
+        window.addEventListener('resize', dynamicCanvasResize);
+        dynamicCanvasResize();
+
+        function launchConfettiEffect() {
+            const colors = ['#FF4757', '#00D26A', '#8854C0', '#FDCB6E', '#00C9A7', '#FFFFFF'];
+            for (let i = 0; i < 35; i++) {
+                confettiCollection.push({
+                    x: Math.random() * canvasElement.width,
+                    y: Math.random() * canvasElement.height - canvasElement.height,
+                    size: Math.random() * 6 + 6,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speedX: Math.random() * 4 - 2,
+                    speedY: Math.random() * 4 + 4,
+                    rotation: Math.random() * 360,
+                    rotationSpeed: Math.random() * 4 - 2
+                });
+            }
+        }
+
+        function animationLoop() {
+            ctxNode.clearRect(0, 0, canvasElement.width, canvasElement.height);
+            confettiCollection.forEach((p, index) => {
+                p.x += p.speedX; p.y += p.speedY; p.rotation += p.rotationSpeed;
+                ctxNode.save();
+                ctxNode.translate(p.x, p.y);
+                ctxNode.rotate((p.rotation * Math.PI) / 180);
+                ctxNode.fillStyle = p.color;
+                ctxNode.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                ctxNode.restore();
+                if (p.y > canvasElement.height) {
+                    confettiCollection.splice(index, 1);
+                }
+            });
+            requestAnimationFrame(animationLoop);
+        }
+        requestAnimationFrame(animationLoop);
+
+        function processQuizEvaluation() {
+            let totalQuestions = dataset.length;
+            let correctCount = 0;
+
+            dataset.forEach(q => {
+                if (studentAnswersTrack[q.id] === true) {
+                    correctCount++;
+                }
+            });
+
+            let percentageResult = (correctCount / totalQuestions) * 100;
+            let finalTeacherComment = "";
+
+            if (percentageResult < 50) {
+                finalTeacherComment = "Nền tảng từ loại cấu trúc câu cần được gia cố thêm. Con hãy xem lại kỹ các tiền tố/hậu tố phủ định nâng cao và chép lại đầy đủ Word Family vào vở nhé!";
+            } else if (percentageResult >= 50 && percentageResult <= 80) {
+                finalTeacherComment = "Làm bài rất tốt! Con đã nắm chắc cách nhận diện danh từ số nhiều và các cấu trúc đi kèm giới từ đặc biệt.";
+            } else {
+                finalTeacherComment = "Xuất sắc chuẩn học sinh giỏi bản lĩnh! Con có phản xạ nhận diện ngữ cảnh trái nghĩa cực kỳ nhanh nhạy.";
+            }
+
+            document.getElementById('score-text').innerText = `${correctCount} / ${totalQuestions}`;
+            document.getElementById('feedback-text').innerText = finalTeacherComment;
+            document.getElementById('score-modal').classList.add('active');
+
+            if (percentageResult >= 75) {
+                for (let k = 0; k < 5; k++) {
+                    setTimeout(launchConfettiEffect, k * 250);
+                }
+            }
+        }
+
+        function reloadQuizLayout() {
+            studentAnswersTrack = {};
+            confettiCollection = [];
+            document.getElementById('score-modal').classList.remove('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(buildQuizLayout, 400);
+        }
+
+        window.onload = function() {
+            buildQuizLayout();
+        };
+    </script>
+</body>
+</html>
